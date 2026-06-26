@@ -1,10 +1,11 @@
 pipeline {
     agent any
 
+    
     environment {
-        DOCKER_IMAGE = "YOUR_DOCKERHUB_USERNAME/demo"
-        IMAGE_TAG = "v1"
-    }
+    DOCKER_IMAGE = "YOUR_DOCKERHUB_USERNAME/demo"
+    IMAGE_TAG = "v1"
+}
 
     stages {
 
