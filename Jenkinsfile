@@ -3,7 +3,7 @@ pipeline {
 
     
     environment {
-    DOCKER_IMAGE = "YOUR_DOCKERHUB_USERNAME/demo"
+    DOCKER_IMAGE = "shree270398/demo"
     IMAGE_TAG = "v1"
 }
 
