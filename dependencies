@@ -34,6 +34,29 @@ Vagrant.configure("2") do |config|
 
 
 end
+
+
+
+sudo apt install -y docker.io
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo usermod -aG docker $USER
+newgrp docker
+
+vagrant up
+vagrant ssh master
+docker swarm init --advertise-addr 192.168.56.10
+docker node ls
+9. Deploy your Java application
+docker service create \
+  --name java-backend \
+  --replicas 3 \
+  -p 8080:8080 \
+  shree270398/java-backend:v1
+docker service ls
+docker service ps image;
+
+
 These are the commands we used to allow Jenkins to access Kubernetes (Minikube) during your first pipeline setup.
 1. Create Jenkins .kube directory
 sudo mkdir -p /var/lib/jenkins/.kube
